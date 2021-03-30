@@ -1,0 +1,1 @@
+from .bip85 import Bip85App as App
