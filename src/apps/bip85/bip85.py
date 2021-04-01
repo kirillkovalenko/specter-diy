@@ -5,7 +5,7 @@ Creates deterministic entropy from BIP32 keychains
 from app import BaseApp, AppError
 from io import BytesIO
 from binascii import hexlify
-from gui.screens import Prompt, Menu
+from gui.screens import Prompt, Menu, DeriveMnemonicScreen
 
 # Should be called App if you use a single file
 class Bip85App(BaseApp):
@@ -69,6 +69,7 @@ class Bip85App(BaseApp):
         if menuitem == 255:
             return False
         elif menuitem == 39:
+            der = await show_screen(DeriveMnemonicScreen())
             return False
         elif menuitem == 2:
             return False
